@@ -4,7 +4,6 @@ import {
     Stage,
   } from "@react-three/drei";
 
-  import Chair from "./Chair";
   import Case from "./Case";
   
   const Experience = () => {
@@ -17,7 +16,6 @@ import {
           rotation={[Math.PI / 8, Math.PI / 4, 0]}
         >
           <Stage environment="city" intensity={0.6} castShadow={false}>
-            {/* <Chair /> */}
             <Case />
           </Stage>
           <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-2}>
