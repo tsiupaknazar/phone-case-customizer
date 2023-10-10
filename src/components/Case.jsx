@@ -17,6 +17,7 @@ function Case(props) {
   const stateString = JSON.stringify(snap);
   return (
     <group key={stateString}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         {/* Create a decal by using a transparent texture */}
         <mesh
           castShadow
@@ -32,7 +33,7 @@ function Case(props) {
           material={materials["Material.007"]}
         >
           <meshStandardMaterial color={snap.color} />
-          {snap.isLogoTexture && (
+          {/* {snap.isLogoTexture && (
             <Decal
               position={[0, 0.04, 0.15]}
               rotation={[0, 0, 0]}
@@ -42,9 +43,9 @@ function Case(props) {
               depthTest={false}
               depthWrite={true}
             />
-          )}
+          )} */}
         </mesh>
-
+      </group>
     </group>
   );
 }
