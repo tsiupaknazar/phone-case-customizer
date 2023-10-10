@@ -1,5 +1,18 @@
 import React, { useRef } from "react";
-import { useGLTF, useTexture, Decal } from "@react-three/drei";
+import {
+  useGLTF,
+  useCursor,
+  useTexture,
+  Text,
+  Decal,
+  Environment,
+  OrbitControls,
+  RenderTexture,
+  RandomizedLight,
+  PerspectiveCamera,
+  AccumulativeShadows,
+  Dodecahedron,
+} from "@react-three/drei";
 
 import * as THREE from "three";
 import { useCustomization } from "../context/Customization";
@@ -9,6 +22,8 @@ import { useSnapshot } from "valtio";
 import state from "../store";
 
 function Case(props) {
+  const textRef = useRef();
+
   const { nodes, materials } = useGLTF("./models/case.gltf");
   const { caseColor, caseImage } = useCustomization(); // Add caseImage from context
 
@@ -33,17 +48,13 @@ function Case(props) {
           material={materials["Material.007"]}
         >
           <meshStandardMaterial color={snap.color} />
-          {/* {snap.isLogoTexture && (
-            <Decal
-              position={[0, 0.04, 0.15]}
-              rotation={[0, 0, 0]}
-              scale={0.15}
-              map={logoTexture}
-              map-anisotropy={16}
-              depthTest={false}
-              depthWrite={true}
-            />
-          )} */}
+          {/* {snap.isLogoTexture && ( */}
+          {/* EXPERIMENTAL SETTINGS FOR MODEL */}
+          {/* <Decal position={[0, 0, 0]} rotation={[0.5, 0, 0.5]} scale={0.15}> */}
+            <Text color="black" >
+              hello world!
+            </Text>
+          {/* </Decal> */}
         </mesh>
       </group>
     </group>

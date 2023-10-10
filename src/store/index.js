@@ -1,11 +1,14 @@
 import { proxy } from "valtio";
 
-import samsungLogo from "../assets/samsung.png"
+import hondaLogo from "../assets/honda.png";
 
 const state = proxy({
-    color: "#ffa500",
-    isLogoTexture: true,
-    logoDecal: samsungLogo,
+  intro: true,
+  color: "#EFBD48",
+  isLogoTexture: true,
+  isFullTexture: false,
+  logoDecal: hondaLogo,
+  fullDecal: hondaLogo,
 });
 
 export default state;
